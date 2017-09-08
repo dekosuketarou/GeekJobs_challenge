@@ -21,7 +21,7 @@ public class profile extends HttpServlet {
     void myprofile(PrintWriter pw){
         //Stringに紹介文を設定
         String name="私の名前は玉城裕也です";
-        String birth="今年２８歳になる、現在２７歳です";
+        String birth="１９８９年９月２２日が誕生日です";
         String profiling="関西生まれの関西育ち、たこ焼きお好み焼きでご飯を食べる人種です";
         //上記設定を下記にて出力
         pw.print(name+"<BR>");
