@@ -22,8 +22,6 @@ import org.camp.servlet.ResultData;
  */
 public class FortuneTelling extends HttpServlet {
 
-    
-
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -38,7 +36,7 @@ public class FortuneTelling extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             
-            String[] luckList={"大吉","中吉","吉","半吉","末小吉","凶","小凶","半凶","末凶","凶","大凶"};
+                String[] luckList={"大吉","中吉","吉","半吉","末小吉","凶","小凶","半凶","末凶","凶","大凶"};
             
             //Randomメソッドでインスタンスを作成
             Random rand=new Random();
@@ -71,6 +69,7 @@ public class FortuneTelling extends HttpServlet {
                 //上記で生成したRequestDispatcherオブジェクトの情報をforwardで
                 //servletクラスからjspクラスへ処理を移行
                 rd.forward(request,response);
+            
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");

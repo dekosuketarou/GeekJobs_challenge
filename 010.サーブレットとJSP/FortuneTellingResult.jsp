@@ -1,6 +1,6 @@
 <%-- 
     Document   : FortuneTellingResult
-    Created on : 2017/09/08, 15:40:02
+    Created on : 2017/09/08, 15:50:32
     Author     : guest1Day
 --%>
 
@@ -22,8 +22,11 @@
         <%
             
             //上部で取得した情報を出力
+            if(data != null){
         out.print("<h1>あなたの"+ data.getD() + "の運勢は、"
                    +data.getLuck() +"です</h1>");
+            }
         %>
+
     </body>
 </html>
