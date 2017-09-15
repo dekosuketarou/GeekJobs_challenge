@@ -89,7 +89,12 @@ public class ManipulateFile3 {
         
         //書き込んだ後はクローズ
         bw.close();
-        //処理の経過を書き込む
-        //
+        
+        String str;
+        while((str = br.readLine()) != null){
+        System.out.println(str);
+        }
+       
+     
     }
 }
