@@ -17,7 +17,9 @@
             
             
             //取得したパラメータの中身がnullでないか確かめる
-            if(request.getParameter("number")!=null){
+            if(request.getParameter("number")!=null&&request.getParameter("number")!=""){
+                //上記条件文 request.getParameter("number").isEmpty()==false は中身に""でないかを確認している
+                //request.getParameter("number")!="" と条件が似ている
                 //パラメータをintに変換
                 int num=Integer.parseInt(request.getParameter("number")); 
                 boolean bl=true;
