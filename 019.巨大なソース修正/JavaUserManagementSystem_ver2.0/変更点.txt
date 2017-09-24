@@ -1,0 +1,72 @@
+//jspファイル//
+
+//index.jsp
+
+デザイン統一のため[Insertjava,Delete.java]の aリンクをフォームボタンに変更
+
+//index.jsp , insert.jsp , insertconfirm.jsp 
+
+ネーミング統一のためxml記述を小文字から大文字に書き換え( insert.java > Insert.java , insertconfirm.java > InsertConfirm.java , insertresult.java > InsertResult.java )
+
+//各必要箇所
+requestで登録されていたデータをsessionに変更
+
+//searchresult.jsp
+表示情報にuserIDを追加
+
+//delete.jsp , deleteresult.jsp , update.jsp , updateresult.jsp
+必要な記述を追記
+
+//update.jsp
+月の選択の記述漏れを修正
+
+
+
+
+//javaファイル//
+
+//各javaファイル
+アクセス制限のための記述を追記
+
+//SearchResult.java
+情報登録に使用する対象をrequestからsessionに変更
+
+//ResultDeteil.java
+クエストリングを使用してUserIDを取得し、その情報をsessionに登録
+
+//Delete.java , DeleteResult.java , Update.java , UpdateResult.java
+必要な記述を追記
+
+
+//DeleteResult詳細
+sessionからudd型データ"result"を取得
+UserDataDAOのメソッドdeleteIDを起動
+DBのdelete処理を終え、session情報を破棄
+deleteresult.jspへ移行
+
+//UpdateResult.java詳細
+update.jsp殻のフォームデータを取得しUserDataBeans型の変数へ格納
+UserDataDTO型変数uddに上記データを変換(UserDataBeansメソッドUD2DTOMapping)
+sessionに登録していたsearchで選択したuserIDを取得し変数uddのuserIDに格納
+作成したupdateIDメソッドを起動し、updateが行われた場合true,行われなかった場合falseを取得しif分岐を作成
+trueだった場合、登録したuserID情報でUserDataDAOメソッドのsearchByIDを起動し単一データを取得
+その後情報をrequestに登録("update")
+updateID完了ごsession情報を破棄
+updateresult.jspへ移行
+
+//UserDataBeans.java UD2DTOMappingメソッド
+年、月、日すべての入力がない場合nullをsetするようsetBirthdayの条件を変更
+
+//UserDataDAO.java searchメソッド
+複数のUserDataDTOを取得できるようにするため戻り値をArrayListへ変更
+
+search条件がひとつの場合でも情報が取得できるように改善(条件が1つでも２つでも３つでもsearchできる)
+
+//UserDataDAO.java deleteIDメソッドの実装
+取得したuserIDでdeleteを実行する対象を指定
+
+//UserDataDAO.java updateIDメソッドの実装
+変更箇所が１つから対応
+生年月日は年月日がセット入力しなければ更新条件から除外される
+updateが行われた場合true,行われなかった場合はfalseを返却する
+

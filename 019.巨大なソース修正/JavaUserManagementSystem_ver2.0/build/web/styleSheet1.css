@@ -1,0 +1,41 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2017/09/24, 20:46:49
+    Author     : DEKO
+*/
+
+.base{
+    border:#d0d0d0 outset 5px;
+    margin: 50px auto auto;
+    box-sizing: border-box;
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 50px;
+    width :500px;
+}
+.base h1{
+    text-align: center;
+}
+.base h2{
+    text-align: center;
+}
+
+.base table tr td{
+    overflow:auto;
+    text-align:center;
+}
+input[type="submit"]{
+    width:150px;
+}
+.base a{
+    text-align:center;
+}
+.oripad{
+    padding-left:40px;
+    text-align: left;
+}
