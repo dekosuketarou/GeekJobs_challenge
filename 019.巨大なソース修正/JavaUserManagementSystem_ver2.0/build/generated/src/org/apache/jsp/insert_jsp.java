@@ -44,6 +44,7 @@ public final class insert_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
+      out.write('\r');
       out.write('\n');
 
     JumsHelper jh = JumsHelper.getInstance();
@@ -55,134 +56,136 @@ public final class insert_jsp extends org.apache.jasper.runtime.HttpJspBase
         udb = (UserDataBeans) hs.getAttribute("udb");
     }
 
-      out.write("\n");
-      out.write("\n");
-      out.write("<!DOCTYPE html>\n");
-      out.write("<html>\n");
-      out.write("    <head>\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <link rel=\"stylesheet\"href=\"styleSheet1.css\">\n");
-      out.write("        <title>JUMS登録画面</title>\n");
-      out.write("    </head>\n");
-      out.write("    <body>\n");
-      out.write("        <div class=\"base\">\n");
-      out.write("            <h1>Jumsユーザー登録画面</h1>\n");
-      out.write("            <div class=\"oripad\">\n");
-      out.write("        <form action=\"insertconfirm\" method=\"POST\">\n");
-      out.write("            名前:\n");
-      out.write("            <input type=\"text\" name=\"name\" value=\"");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<!DOCTYPE html>\r\n");
+      out.write("<html>\r\n");
+      out.write("    <head>\r\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+      out.write("        <link rel=\"stylesheet\"href=\"styleSheet1.css\">\r\n");
+      out.write("        <title>JUMS登録画面</title>\r\n");
+      out.write("    </head>\r\n");
+      out.write("    <body>\r\n");
+      out.write("        <div class=\"base\">\r\n");
+      out.write("            <h1>Jumsユーザー登録画面</h1>\r\n");
+      out.write("            <div class=\"oripad\">\r\n");
+      out.write("                <form action=\"InsertConfirm\" method=\"POST\">\r\n");
+      out.write("                    名前:\r\n");
+      out.write("                    <input type=\"text\" name=\"name\" value=\"");
  if (reinput) {
-                out.print(udb.getName());
-            }
-      out.write("\">\n");
-      out.write("            <br><br>\n");
-      out.write("\n");
-      out.write("            生年月日:　\n");
-      out.write("            <select name=\"year\">\n");
-      out.write("                <option value=\"\">----</option>\n");
-      out.write("                ");
+                    out.print(udb.getName());
+                    }
+      out.write("\" maxlength=\"10\">\r\n");
+      out.write("                    <br><br>\r\n");
+      out.write("\r\n");
+      out.write("                    生年月日:　\r\n");
+      out.write("                    <select name=\"year\">\r\n");
+      out.write("                        <option value=\"\">----</option>\r\n");
+      out.write("                        ");
  for (int i = 1950; i <= 2010; i++) {
-      out.write("\n");
-      out.write("                <option value=\"");
+      out.write("\r\n");
+      out.write("                        <option value=\"");
       out.print(i);
       out.write('"');
       out.write(' ');
  if (reinput && udb.getYear() == i) {
-                    out.print("selected = \"selected\"");
-                }
+                        out.print("selected = \"selected\"");
+                    }
       out.write('>');
       out.print(i);
-      out.write("</option>\n");
-      out.write("                ");
+      out.write("</option>\r\n");
+      out.write("                        ");
  } 
-      out.write("\n");
-      out.write("            </select>年\n");
-      out.write("            <select name=\"month\">\n");
-      out.write("                <option value=\"\">--</option>\n");
-      out.write("                ");
+      out.write("\r\n");
+      out.write("                    </select>年\r\n");
+      out.write("                    <select name=\"month\">\r\n");
+      out.write("                        <option value=\"\">--</option>\r\n");
+      out.write("                        ");
  for (int i = 1; i <= 12; i++) {
-      out.write("\n");
-      out.write("                <option value=\"");
+      out.write("\r\n");
+      out.write("                        <option value=\"");
       out.print(i);
       out.write('"');
       out.write(' ');
  if (reinput && udb.getMonth() == i) {
-                    out.print("selected = \"selected\"");
-                }
+                        out.print("selected = \"selected\"");
+                    }
       out.write('>');
       out.print(i);
-      out.write("</option>\n");
-      out.write("                ");
+      out.write("</option>\r\n");
+      out.write("                        ");
  } 
-      out.write("\n");
-      out.write("            </select>月\n");
-      out.write("            <select name=\"day\">\n");
-      out.write("                <option value=\"\">--</option>\n");
-      out.write("                ");
+      out.write("\r\n");
+      out.write("                    </select>月\r\n");
+      out.write("                    <select name=\"day\">\r\n");
+      out.write("                        <option value=\"\">--</option>\r\n");
+      out.write("                        ");
  for (int i = 1; i <= 31; i++) {
-      out.write("\n");
-      out.write("                <option value=\"");
+      out.write("\r\n");
+      out.write("                        <option value=\"");
       out.print(i);
       out.write('"');
  if (reinput && udb.getDay() == i) {
-                    out.print("selected = \"selected\"");
-                }
+                        out.print("selected = \"selected\"");
+                    }
       out.write('>');
       out.print(i);
-      out.write("</option>\n");
-      out.write("                ");
+      out.write("</option>\r\n");
+      out.write("                        ");
  } 
-      out.write("\n");
-      out.write("            </select>日\n");
-      out.write("            <br><br>\n");
-      out.write("\n");
-      out.write("            種別:\n");
-      out.write("            <br>\n");
-      out.write("            ");
+      out.write("\r\n");
+      out.write("                    </select>日\r\n");
+      out.write("                    <br><br>\r\n");
+      out.write("\r\n");
+      out.write("                    種別:\r\n");
+      out.write("                    <br>\r\n");
+      out.write("                    ");
  for (int i = 1; i <= 3; i++) {
-      out.write("\n");
-      out.write("            <input type=\"radio\" name=\"type\" value=\"");
+      out.write("\r\n");
+      out.write("                    <input type=\"radio\" name=\"type\" value=\"");
       out.print(i);
       out.write('"');
 if (reinput && udb.getType() == i) {
-                    out.print("checked = \"checked\"");
-                }
+                            out.print("checked = \"checked\"");
+                        }
       out.write('>');
       out.print(jh.exTypenum(i));
-      out.write("<br>\n");
-      out.write("            ");
+      out.write("<br>\r\n");
+      out.write("                    ");
  } 
-      out.write("\n");
-      out.write("            <br>\n");
-      out.write("\n");
-      out.write("            電話番号:\n");
-      out.write("            <input type=\"text\" name=\"tell\" value=\"");
+      out.write("\r\n");
+      out.write("                    <br>\r\n");
+      out.write("\r\n");
+      out.write("                    電話番号:\r\n");
+      out.write("                    <input type=\"text\" name=\"tell\" value=\"");
  if (reinput) {
-                out.print(udb.getTell());
-            }
-      out.write("\">\n");
-      out.write("            <br><br>\n");
-      out.write("\n");
-      out.write("            自己紹介文\n");
-      out.write("            <br>\n");
-      out.write("            <textarea name=\"comment\" rows=10 cols=50 style=\"resize:none\" wrap=\"hard\">");
+                    out.print(udb.getTell());
+                }
+      out.write("\" maxlength=\"15\">\r\n");
+      out.write("                    <br><br>\r\n");
+      out.write("\r\n");
+      out.write("                    自己紹介文\r\n");
+      out.write("                    <br>\r\n");
+      out.write("                    <textarea name=\"comment\" rows=10 cols=35 style=\"resize:none\" wrap=\"hard\" maxlength=\"100\">");
  if (reinput) {
-                out.print(udb.getComment());
-            }
-      out.write("</textarea><br><br>\n");
-      out.write("            </div>\n");
-      out.write("            <input type=\"hidden\" name=\"ac\"  value=\"");
+                    out.print(udb.getComment());
+                }
+      out.write("</textarea><br><br>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <input type=\"hidden\" name=\"ac\"  value=\"");
       out.print( hs.getAttribute("ac"));
-      out.write("\">\n");
-      out.write("            <div style=\"text-align: center\"><input type=\"submit\" name=\"btnSubmit\" value=\"確認画面へ\" style=\"width:150px\"></div>\n");
-      out.write("        </form>\n");
-      out.write("        ");
+      out.write("\">\r\n");
+      out.write("                    <div style=\"text-align: center\"><input type=\"submit\" name=\"btnSubmit\" value=\"確認画面へ\" ></div>\r\n");
+      out.write("                </form>\r\n");
+      out.write("            </div>\r\n");
+      out.write("            <br>\r\n");
+      out.write("            <div style=\"text-align: center\">\r\n");
+      out.write("                ");
       out.print(jh.home());
-      out.write("\n");
-      out.write("        </div>\n");
-      out.write("        <br>\n");
-      out.write("    </body>\n");
-      out.write("</html>\n");
+      out.write("\r\n");
+      out.write("            </div>\r\n");
+      out.write("    </body>\r\n");
+      out.write("</html>\r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

@@ -42,33 +42,38 @@ public final class deleteresult_jsp extends org.apache.jasper.runtime.HttpJspBas
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write('\n');
-      out.write('\n');
+      out.write("\r\n");
+      out.write("\r\n");
 
+      if (request.getAttribute("ac") != null) {
     JumsHelper jh = JumsHelper.getInstance();
 
-
-      out.write("\n");
-      out.write("\n");
-      out.write("<!DOCTYPE html>\n");
-      out.write("<html>\n");
-      out.write("    <head>\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <link rel=\"stylesheet\"href=\"styleSheet1.css\">\n");
-      out.write("        <title>削除結果画面</title>\n");
-      out.write("    </head>\n");
-      out.write("    <body>    <div class=\"base\">\n");
-      out.write("        \n");
-      out.write("            <h1>指定したデータを削除しました</h1>\n");
-      out.write("        \n");
-      out.write("        </div>\n");
-      out.write("    <br>\n");
-      out.write("    ");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<!DOCTYPE html>\r\n");
+      out.write("<html>\r\n");
+      out.write("    <head>\r\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+      out.write("        <link rel=\"stylesheet\"href=\"styleSheet1.css\">\r\n");
+      out.write("        <title>削除結果画面</title>\r\n");
+      out.write("    </head>\r\n");
+      out.write("    <body>    <div class=\"base\">\r\n");
+      out.write("\r\n");
+      out.write("            <h1>指定したデータを削除しました</h1>\r\n");
+      out.write("\r\n");
+      out.write("        </div>\r\n");
+      out.write("        <br>\r\n");
+      out.write("        <div style=\"text-align: center\">\r\n");
+      out.write("            ");
       out.print(jh.home());
-      out.write("\n");
-      out.write("    </body>\n");
-      out.write("\n");
-      out.write("</html>\n");
+      out.write("\r\n");
+      out.write("        </div>\r\n");
+      out.write("            ");
+}else{response.sendRedirect("index.jsp");}
+      out.write("        \r\n");
+      out.write("    </body>\r\n");
+      out.write("\r\n");
+      out.write("</html>\r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

@@ -10,9 +10,10 @@
     <body>   
         <div class="base">
             エラーが発生しました。以下の項目を確認してください。<br>
-            <%=request.getAttribute("error")%><br><br>
+            <h1> <%if(request.getAttribute("error")!=null){%><%=request.getAttribute("error")%><%}else{out.print("予期せぬエラー");}%></h1>
         </div>
         <div style="text-align: center">
+            <br>
             <%=JumsHelper.getInstance().home()%>
         </div>
     </body>

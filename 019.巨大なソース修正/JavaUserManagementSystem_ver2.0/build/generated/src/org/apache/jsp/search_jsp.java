@@ -42,77 +42,80 @@ public final class search_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
+      out.write('\r');
       out.write('\n');
 
     JumsHelper jh = JumsHelper.getInstance();
-    HttpSession hs=request.getSession();
+    HttpSession hs = request.getSession();
 
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("<!DOCTYPE html>\n");
-      out.write("<html>\n");
-      out.write("    <head>\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <link rel=\"stylesheet\"href=\"styleSheet1.css\">\n");
-      out.write("        <title>JUMSユーザー情報検索画面</title>\n");
-      out.write("    </head>\n");
-      out.write("    <body>\n");
-      out.write("        <div class=\"base\">\n");
-      out.write("            <h1>ユーザー情報検索</h1>\n");
-      out.write("            <div class=\"oripad\">\n");
-      out.write("         <form action=\"SearchResult\" method=\"POST\">\n");
-      out.write("        名前:\n");
-      out.write("        <input type=\"text\" name=\"name\">\n");
-      out.write("        <br><br>\n");
-      out.write("\n");
-      out.write("        生年:　\n");
-      out.write("        <select name=\"year\">\n");
-      out.write("            <option value=\"\">----</option>\n");
-      out.write("            ");
- for(int i=1950; i<=2010; i++){ 
-      out.write("\n");
-      out.write("            <option value=\"");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<!DOCTYPE html>\r\n");
+      out.write("<html>\r\n");
+      out.write("    <head>\r\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+      out.write("        <link rel=\"stylesheet\"href=\"styleSheet1.css\">\r\n");
+      out.write("        <title>JUMSユーザー情報検索画面</title>\r\n");
+      out.write("    </head>\r\n");
+      out.write("    <body>\r\n");
+      out.write("        <div class=\"base\">\r\n");
+      out.write("            <h1>ユーザー情報検索</h1>\r\n");
+      out.write("            <div class=\"oripad\">\r\n");
+      out.write("                <form action=\"SearchResult\" method=\"POST\">\r\n");
+      out.write("                    名前:\r\n");
+      out.write("                    <input type=\"text\" name=\"name\">\r\n");
+      out.write("                    <br><br>\r\n");
+      out.write("\r\n");
+      out.write("                    生年:　\r\n");
+      out.write("                    <select name=\"year\">\r\n");
+      out.write("                        <option value=\"\">----</option>\r\n");
+      out.write("                        ");
+ for (int i = 1950; i <= 2010; i++) {
+      out.write("\r\n");
+      out.write("                        <option value=\"");
       out.print(i);
       out.write('"');
       out.write('>');
       out.print(i);
-      out.write("</option>\n");
-      out.write("            ");
+      out.write("</option>\r\n");
+      out.write("                        ");
  } 
-      out.write("\n");
-      out.write("        </select>年生まれ\n");
-      out.write("        <br><br>\n");
-      out.write("\n");
-      out.write("        種別:\n");
-      out.write("        <br>\n");
-      out.write("            ");
- for(int i = 1; i<=3; i++){ 
-      out.write("\n");
-      out.write("            <input type=\"radio\" name=\"type\" value=\"");
+      out.write("\r\n");
+      out.write("                    </select>年生まれ\r\n");
+      out.write("                    <br><br>\r\n");
+      out.write("\r\n");
+      out.write("                    種別:\r\n");
+      out.write("                    <br>\r\n");
+      out.write("                    ");
+ for (int i = 1; i <= 3; i++) {
+      out.write("\r\n");
+      out.write("                    <input type=\"radio\" name=\"type\" value=\"");
       out.print(i);
       out.write('"');
       out.write('>');
       out.print(jh.exTypenum(i));
-      out.write("<br>\n");
-      out.write("            ");
- } 
-      out.write("\n");
-      out.write("            </div>\n");
-      out.write("        <br>\n");
-      out.write("\n");
-      out.write("        <div style=\"text-align: center\"><input type=\"submit\" name=\"btnSubmit\" value=\"検索\"style=\"width:150px\"></div>\n");
-      out.write("        <input type=\"hidden\" name=\"ac\"  value=\"");
+      out.write("<br>\r\n");
+      out.write("                    ");
+ }
+      out.write("\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <br>\r\n");
+      out.write("\r\n");
+      out.write("                    <div style=\"text-align: center\"><input type=\"submit\" name=\"btnSubmit\" value=\"検索\"></div>\r\n");
+      out.write("                    <input type=\"hidden\" name=\"ac\"  value=\"");
       out.print( hs.getAttribute("ac"));
-      out.write("\">\n");
-      out.write("    </form>\n");
-      out.write("        </div>\n");
-      out.write("        <br>\n");
-      out.write("        ");
+      out.write("\">\r\n");
+      out.write("                </form>\r\n");
+      out.write("            </div>\r\n");
+      out.write("            <br>\r\n");
+      out.write("            <div style=\"text-align: center\">\r\n");
+      out.write("                ");
       out.print(jh.home());
-      out.write("\n");
-      out.write("    </body>\n");
-      out.write("</html>\n");
+      out.write("\r\n");
+      out.write("            </div>\r\n");
+      out.write("    </body>\r\n");
+      out.write("</html>\r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

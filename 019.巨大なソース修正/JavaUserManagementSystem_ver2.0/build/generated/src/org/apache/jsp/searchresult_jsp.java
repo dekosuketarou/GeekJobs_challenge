@@ -44,76 +44,85 @@ public final class searchresult_jsp extends org.apache.jasper.runtime.HttpJspBas
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write('\n');
-      out.write('\n');
+      out.write("\r\n");
+      out.write("\r\n");
 
+    if (session.getAttribute("ac") != null) {
     JumsHelper jh = JumsHelper.getInstance();
-
     HttpSession hs = request.getSession();
     ArrayList<UserDataDTO> AL = (ArrayList<UserDataDTO>) hs.getAttribute("resultData");
 //    UserDataDTO udd = (UserDataDTO)request.getAttribute("resultData");
     if (AL != null) {
 
-      out.write("\n");
-      out.write("\n");
-      out.write("<!DOCTYPE html>\n");
-      out.write("<html>\n");
-      out.write("    <head>\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <link rel=\"stylesheet\"href=\"styleSheet1.css\">\n");
-      out.write("        <title>JUMS検索結果画面</title>\n");
-      out.write("    </head>\n");
-      out.write("    <body>\n");
-      out.write("        <div class=\"base\" align=\"center\">\n");
-      out.write("        <h1>検索結果</h1>\n");
-      out.write("        <table border=1 >\n");
-      out.write("            <tr>\n");
-      out.write("                <th>名前</th>\n");
-      out.write("                <th>生年月日</th>\n");
-      out.write("                <th>種別</th>\n");
-      out.write("                <th>登録日時</th>\n");
-      out.write("            </tr>\n");
-      out.write("            ");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<!DOCTYPE html>\r\n");
+      out.write("<html>\r\n");
+      out.write("    <head>\r\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+      out.write("        <link rel=\"stylesheet\"href=\"styleSheet1.css\">\r\n");
+      out.write("        <title>JUMS検索結果画面</title>\r\n");
+      out.write("    </head>\r\n");
+      out.write("    <body>\r\n");
+      out.write("        <div class=\"base\" align=\"center\">\r\n");
+      out.write("            <h1>検索結果</h1>\r\n");
+      out.write("            <table border=1 >\r\n");
+      out.write("                <tr>\r\n");
+      out.write("                    <th>ID</th>\r\n");
+      out.write("                    <th>名前</th>\r\n");
+      out.write("                    <th>生年月日</th>\r\n");
+      out.write("                    <th>種別</th>\r\n");
+      out.write("                    <th>登録日時</th>\r\n");
+      out.write("                </tr>\r\n");
+      out.write("                ");
 
-            for(UserDataDTO udd:AL){
-            
-      out.write("\n");
-      out.write("            <tr>\n");
-      out.write("                <td><a href=\"ResultDetail?id=");
+                    for (UserDataDTO udd : AL) {
+                
+      out.write("\r\n");
+      out.write("                <tr>\r\n");
+      out.write("                    <td>");
+      out.print( udd.getUserID());
+      out.write("</td>\r\n");
+      out.write("                    <td><a href=\"ResultDetail?id=");
       out.print( udd.getUserID());
       out.write('"');
       out.write('>');
       out.print( udd.getName());
-      out.write("</a></td>\n");
-      out.write("                <td>");
+      out.write("</a></td>\r\n");
+      out.write("                    <td>");
       out.print( udd.getBirthday());
-      out.write("</td>\n");
-      out.write("                <td>");
+      out.write("</td>\r\n");
+      out.write("                    <td>");
       out.print( udd.getType());
-      out.write("</td>\n");
-      out.write("                <td>");
+      out.write("</td>\r\n");
+      out.write("                    <td>");
       out.print( udd.getNewDate());
-      out.write("</td>\n");
-      out.write("            </tr>\n");
-      out.write("            ");
+      out.write("</td>\r\n");
+      out.write("                </tr>\r\n");
+      out.write("                ");
 }
-      out.write("\n");
-      out.write("        </table>\n");
+      out.write("\r\n");
+      out.write("            </table>\r\n");
       out.write("            ");
 } else if (AL == null) {
       out.print("該当するデータがありません");
-      out.write("<BR>\n");
-      out.write("            <a href=\"search.jsp\">検索画面へ戻る</a><BR>\n");
+      out.write("<BR>\r\n");
+      out.write("            <a href=\"search.jsp\">検索画面へ戻る</a><BR>\r\n");
       out.write("            ");
 }
-      out.write("\n");
-      out.write("        </div>\n");
-      out.write("            <br>\n");
+      out.write("\r\n");
+      out.write("        </div>\r\n");
+      out.write("        <br>\r\n");
+      out.write("        <div style=\"text-align: center\">\r\n");
       out.write("            ");
       out.print(jh.home());
-      out.write("\n");
-      out.write("    </body>\n");
-      out.write("</html>\n");
+      out.write("\r\n");
+      out.write("        </div>\r\n");
+      out.write("            ");
+}else{response.sendRedirect("index.jsp");}
+      out.write("        \r\n");
+      out.write("    </body>\r\n");
+      out.write("</html>\r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

@@ -2,8 +2,8 @@
 <%@page import="jums.JumsHelper"
         import="jums.UserDataDTO" %>
 <%
+    if (session.getAttribute("ac") != null) {
     JumsHelper jh = JumsHelper.getInstance();
-
     HttpSession hs = request.getSession();
     ArrayList<UserDataDTO> AL = (ArrayList<UserDataDTO>) hs.getAttribute("resultData");
 //    UserDataDTO udd = (UserDataDTO)request.getAttribute("resultData");
@@ -48,5 +48,6 @@
         <div style="text-align: center">
             <%=jh.home()%>
         </div>
+            <%}else{response.sendRedirect("index.jsp");}%>        
     </body>
 </html>

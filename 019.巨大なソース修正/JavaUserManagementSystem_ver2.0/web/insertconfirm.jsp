@@ -5,8 +5,11 @@
 <%
     JumsHelper jh = JumsHelper.getInstance();
     HttpSession hs = request.getSession();
-    UserDataBeans udb = (UserDataBeans) hs.getAttribute("udb");
-    ArrayList<String> chkList = udb.chkproperties();
+
+    if (session.getAttribute("ac") != null) {
+
+        UserDataBeans udb = (UserDataBeans) hs.getAttribute("udb");
+        ArrayList<String> chkList = udb.chkproperties();
 
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -61,5 +64,6 @@
         <div style="text-align: center">
             <%=jh.home()%>
         </div>
+            <%}else{response.sendRedirect("index.jsp");}%>
     </body>
 </html>

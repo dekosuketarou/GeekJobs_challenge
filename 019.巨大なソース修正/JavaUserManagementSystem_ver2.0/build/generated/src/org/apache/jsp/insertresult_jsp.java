@@ -44,46 +44,55 @@ public final class insertresult_jsp extends org.apache.jasper.runtime.HttpJspBas
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
+      out.write('\r');
       out.write('\n');
 
+    if (request.getAttribute("ac") != null) {    
     JumsHelper jh = JumsHelper.getInstance();
     UserDataBeans udb = (UserDataBeans) request.getAttribute("udb");
 
-      out.write("\n");
-      out.write("\n");
-      out.write("<!DOCTYPE html>\n");
-      out.write("<html>\n");
-      out.write("    <head>\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <link rel=\"stylesheet\"href=\"styleSheet1.css\">\n");
-      out.write("        <title>JUMS登録結果画面</title>\n");
-      out.write("    </head>\n");
-      out.write("    <body>\n");
-      out.write("        <div class=\"base oripad\">\n");
-      out.write("            <h1>登録結果</h1><br>\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<!DOCTYPE html>\r\n");
+      out.write("<html>\r\n");
+      out.write("    <head>\r\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+      out.write("        <link rel=\"stylesheet\"href=\"styleSheet1.css\">\r\n");
+      out.write("        <title>JUMS登録結果画面</title>\r\n");
+      out.write("    </head>\r\n");
+      out.write("    <body>\r\n");
+      out.write("        <div class=\"base\">\r\n");
+      out.write("            <h1>登録結果</h1><br>\r\n");
+      out.write("            <table align=\"center\"><tr><td style=\"text-align: left\">\r\n");
       out.write("            名前:");
       out.print( udb.getName());
-      out.write("<br>\n");
+      out.write("<br>\r\n");
       out.write("            生年月日:");
       out.print( udb.getYear() + "年" + udb.getMonth() + "月" + udb.getDay() + "日");
-      out.write("<br>\n");
+      out.write("<br>\r\n");
       out.write("            種別:");
       out.print( jh.exTypenum(udb.getType()));
-      out.write("<br>\n");
+      out.write("<br>\r\n");
       out.write("            電話番号:");
       out.print( udb.getTell());
-      out.write("<br>\n");
-      out.write("            自己紹介:");
+      out.write("<br>\r\n");
+      out.write("            自己紹介:<br>");
       out.print( udb.getComment());
-      out.write("<br>\n");
-      out.write("            以上の内容で登録しました。<br><br>\n");
-      out.write("        </div>\n");
-      out.write("            <br>\n");
+      out.write("<br>\r\n");
+      out.write("            以上の内容で登録しました。<br><br>\r\n");
+      out.write("                    </td></tr></table>\r\n");
+      out.write("        </div>\r\n");
+      out.write("        <br>\r\n");
+      out.write("        <div style=\"text-align: center\">\r\n");
       out.write("            ");
       out.print(jh.home());
-      out.write("\n");
-      out.write("            </body>\n");
-      out.write("</html>\n");
+      out.write("\r\n");
+      out.write("        </div>\r\n");
+      out.write("        ");
+}else{response.sendRedirect("index.jsp");}
+      out.write("\r\n");
+      out.write("    </body>\r\n");
+      out.write("</html>\r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

@@ -2,6 +2,7 @@
         import="jums.JumsHelper"
         import="jums.UserDataBeans" %>
 <%
+    if (request.getAttribute("ac") != null) {    
     JumsHelper jh = JumsHelper.getInstance();
     UserDataBeans udb = (UserDataBeans) request.getAttribute("udb");
 %>
@@ -29,5 +30,6 @@
         <div style="text-align: center">
             <%=jh.home()%>
         </div>
+        <%}else{response.sendRedirect("index.jsp");}%>
     </body>
 </html>

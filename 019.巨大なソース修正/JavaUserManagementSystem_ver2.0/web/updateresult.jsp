@@ -1,6 +1,7 @@
 <%@page import="jums.UserDataDTO"%>
 <%@page import="jums.JumsHelper" %>
 <%
+    if (request.getAttribute("ac") != null) {
     JumsHelper jh = JumsHelper.getInstance();
     UserDataDTO udd = (UserDataDTO) request.getAttribute("update");
 %>
@@ -41,6 +42,7 @@
         <div style="text-align: center">
             <%=jh.home()%>
         </div>
+            <%}else{response.sendRedirect("index.jsp");}%>        
     </body>
 
 </html>

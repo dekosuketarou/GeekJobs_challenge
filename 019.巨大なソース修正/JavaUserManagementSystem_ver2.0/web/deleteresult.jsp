@@ -1,8 +1,8 @@
 <%@page import="jums.JumsHelper"%>
 
 <%
+      if (request.getAttribute("ac") != null) {
     JumsHelper jh = JumsHelper.getInstance();
-
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -21,6 +21,7 @@
         <div style="text-align: center">
             <%=jh.home()%>
         </div>
+            <%}else{response.sendRedirect("index.jsp");}%>        
     </body>
 
 </html>

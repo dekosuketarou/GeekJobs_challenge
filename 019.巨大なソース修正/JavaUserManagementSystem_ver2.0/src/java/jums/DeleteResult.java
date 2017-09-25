@@ -30,6 +30,13 @@ public class DeleteResult extends HttpServlet {
         PrintWriter out = response.getWriter();
         try {
             HttpSession session = request.getSession();
+            //アクセスルートチェック
+
+            if (session.getAttribute("ac") == null) {
+                throw new Exception("不正なアクセスです");
+            } else {
+                request.setAttribute("ac", session.getAttribute("ac"));
+            }
             UserDataDTO udd = (UserDataDTO) session.getAttribute("result");
             UserDataDAO.getInstance().deleteID(udd);
 

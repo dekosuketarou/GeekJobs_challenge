@@ -35,6 +35,8 @@ public class UpdateResult extends HttpServlet {
            
             if (session.getAttribute("ac") == null) {
                 throw new Exception("不正なアクセスです");
+            }else{
+                request.setAttribute("ac",session.getAttribute("ac"));
             }
             UserDataBeans udb = new UserDataBeans();
             //update.jspからのフォームデータを取得しudbへ保管

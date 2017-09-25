@@ -37,8 +37,9 @@ public class InsertResult extends HttpServlet {
             String accesschk = request.getParameter("ac");
             if(accesschk ==null || (Integer)session.getAttribute("ac")!=Integer.parseInt(accesschk)){
                 throw new Exception("不正なアクセスです");
-            }
-            
+            }else{
+                request.setAttribute("ac",session.getAttribute("ac"));
+            } 
             UserDataBeans udb = (UserDataBeans)session.getAttribute("udb");
             
             //DTOオブジェクトにマッピング。DB専用のパラメータに変換

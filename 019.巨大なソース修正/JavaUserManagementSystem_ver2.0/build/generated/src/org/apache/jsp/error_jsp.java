@@ -3,10 +3,9 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
-import jums.UserDataDTO;
 import jums.JumsHelper;
 
-public final class updateresult_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class error_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -45,68 +44,29 @@ public final class updateresult_jsp extends org.apache.jasper.runtime.HttpJspBas
 
       out.write("\r\n");
       out.write("\r\n");
-
-    if (request.getAttribute("ac") != null) {
-    JumsHelper jh = JumsHelper.getInstance();
-    UserDataDTO udd = (UserDataDTO) request.getAttribute("update");
-
-      out.write("\r\n");
-      out.write("\r\n");
       out.write("<!DOCTYPE html>\r\n");
       out.write("<html>\r\n");
       out.write("    <head>\r\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
       out.write("        <link rel=\"stylesheet\"href=\"styleSheet1.css\">\r\n");
-      out.write("        <title>JUMS更新結果画面</title>\r\n");
+      out.write("        <title>error</title>\r\n");
       out.write("    </head>\r\n");
-      out.write("    <body>\r\n");
+      out.write("    <body>   \r\n");
       out.write("        <div class=\"base\">\r\n");
-      out.write("            <h1>変更結果</h1><br>\r\n");
-      out.write("\r\n");
-      out.write("            <table border=1 align=\"center\" width=\"440px\">\r\n");
-      out.write("                <tr><th>ID</th>\r\n");
-      out.write("                    <th>名前</th>\r\n");
-      out.write("                    <th>生年月日</th>\r\n");
-      out.write("                    <th>種別</th>\r\n");
-      out.write("                    <th>電話番号</th>\r\n");
-      out.write("                    \r\n");
-      out.write("                </tr>\r\n");
-      out.write("\r\n");
-      out.write("                <tr>\r\n");
-      out.write("                    <td>");
-      out.print( udd.getUserID());
-      out.write("</td>\r\n");
-      out.write("                    <td>");
-      out.print( udd.getName());
-      out.write("</a></td>\r\n");
-      out.write("                    <td>");
-      out.print( udd.getBirthday());
-      out.write("</td>\r\n");
-      out.write("                    <td>");
-      out.print( udd.getType());
-      out.write("</td>\r\n");
-      out.write("                    <td>");
-      out.print( udd.getTell());
-      out.write("</td>\r\n");
-      out.write("                </tr>\r\n");
-      out.write("                <tr><th rowspan=\"1\">自己紹介</th>\r\n");
-      out.write("                <td colspan=\"4\">");
-      out.print( udd.getComment());
-      out.write("</td>\r\n");
-      out.write("                </tr>\r\n");
-      out.write("            </table>\r\n");
-      out.write("                <h2>以上の内容で登録しました</h2>\r\n");
+      out.write("            エラーが発生しました。以下の項目を確認してください。<br>\r\n");
+      out.write("            <h1> ");
+if(request.getAttribute("error")!=null){
+      out.print(request.getAttribute("error"));
+}else{out.print("予期せぬエラー");}
+      out.write("</h1>\r\n");
       out.write("        </div>\r\n");
       out.write("        <div style=\"text-align: center\">\r\n");
+      out.write("            <br>\r\n");
       out.write("            ");
-      out.print(jh.home());
+      out.print(JumsHelper.getInstance().home());
       out.write("\r\n");
       out.write("        </div>\r\n");
-      out.write("            ");
-}else{response.sendRedirect("index.jsp");}
-      out.write("        \r\n");
       out.write("    </body>\r\n");
-      out.write("\r\n");
       out.write("</html>\r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
