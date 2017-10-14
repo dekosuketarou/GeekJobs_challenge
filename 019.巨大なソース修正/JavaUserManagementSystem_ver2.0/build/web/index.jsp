@@ -3,7 +3,7 @@
 <html lang="ja">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet"href="styleSheet1.css">
+        <link rel="stylesheet" href="styleSheet1.css" type="text/css">
         <title>JUMSトップ</title>
     </head>
     <body>

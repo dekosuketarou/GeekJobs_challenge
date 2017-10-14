@@ -16,7 +16,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet"href="styleSheet1.css">
+        <link rel="stylesheet" href="styleSheet1.css" type="text/css">
         <title>JUMS登録画面</title>
     </head>
     <body>

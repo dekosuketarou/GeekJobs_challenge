@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet"href="styleSheet1.css">
+        <link rel="stylesheet" href="styleSheet1.css" type="text/css">
         <title>削除結果画面</title>
     </head>
     <body>    <div class="base">
@@ -21,7 +21,7 @@
         <div style="text-align: center">
             <%=jh.home()%>
         </div>
-            <%}else{response.sendRedirect("index.jsp");}%>        
+        <%}else{response.sendRedirect("index.jsp");}%>        
     </body>
 
 </html>

@@ -2,24 +2,27 @@
 <%@page import="jums.JumsHelper"
         import="jums.UserDataDTO" %>
 <%
-    if (session.getAttribute("ac") != null) {
-    JumsHelper jh = JumsHelper.getInstance();
-    HttpSession hs = request.getSession();
-    ArrayList<UserDataDTO> AL = (ArrayList<UserDataDTO>) hs.getAttribute("resultData");
+    if (session.getAttribute("ac") == null) {
+        response.sendRedirect("index.jsp");
+    } else {
+        JumsHelper jh = JumsHelper.getInstance();
+        HttpSession hs = request.getSession();
+        ArrayList<UserDataDTO> AL = (ArrayList<UserDataDTO>) hs.getAttribute("resultData");
 //    UserDataDTO udd = (UserDataDTO)request.getAttribute("resultData");
-    if (AL != null) {
+
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet"href="styleSheet1.css">
+        <link rel="stylesheet" href="styleSheet1.css" type="text/css">
         <title>JUMS検索結果画面</title>
     </head>
     <body>
         <div class="base" align="center">
             <h1>検索結果</h1>
+            <% if (AL != null) {%>
             <table border=1 >
                 <tr>
                     <th>ID</th>
@@ -48,6 +51,6 @@
         <div style="text-align: center">
             <%=jh.home()%>
         </div>
-            <%}else{response.sendRedirect("index.jsp");}%>        
+        <%}%>        
     </body>
 </html>

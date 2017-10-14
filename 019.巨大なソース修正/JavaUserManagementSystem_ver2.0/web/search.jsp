@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet"href="styleSheet1.css">
+        <link rel="stylesheet" href="styleSheet1.css" type="text/css">
         <title>JUMSユーザー情報検索画面</title>
     </head>
     <body>

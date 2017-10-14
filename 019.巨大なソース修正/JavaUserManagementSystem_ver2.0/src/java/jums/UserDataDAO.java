@@ -247,7 +247,7 @@ public class UserDataDAO {
             //パラメータ記述にもif条件で振り分ける必要がある
             String sql = "update user_t set";
             boolean flag = false;
-
+            
             if (!ud.getName().equals("")) {
                 sql += " name=?";
                 flag = true;
@@ -286,6 +286,7 @@ public class UserDataDAO {
             }
             sql += " where userID=?";
             st = con.prepareStatement(sql);
+            int flag2=0;
             if (flag) {
 
                 if (!ud.getName().equals("")) {
@@ -309,8 +310,12 @@ public class UserDataDAO {
                     i++;
                 }
                 st.setInt(i, ud.getUserID());
-
-                st.executeUpdate();
+                //更新数を取得
+                flag2=st.executeUpdate();
+                //更新したものがあればtrueのまま
+                if(flag2==0){
+                    flag=false;
+                }
             }
             con.close();
             st.close();

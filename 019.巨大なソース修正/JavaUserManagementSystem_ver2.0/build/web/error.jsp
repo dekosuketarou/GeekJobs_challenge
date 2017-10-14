@@ -4,11 +4,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet"href="styleSheet1.css">
+        <link rel="stylesheet" href="styleSheet1.css" type="text/css">
         <title>error</title>
     </head>
     <body>   
-        <div class="base">
+        <div class="base" style="word-break: all;">
             エラーが発生しました。以下の項目を確認してください。<br>
             <h1> <%if(request.getAttribute("error")!=null){%><%=request.getAttribute("error")%><%}else{out.print("予期せぬエラー");}%></h1>
         </div>

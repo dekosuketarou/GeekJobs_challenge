@@ -2,16 +2,16 @@
         import="jums.UserDataDTO" %>
 <%
     if (session.getAttribute("ac") != null) {
-    JumsHelper jh = JumsHelper.getInstance();
-    HttpSession hs = request.getSession();
-    UserDataDTO udd = (UserDataDTO) hs.getAttribute("result");
+        JumsHelper jh = JumsHelper.getInstance();
+        HttpSession hs = request.getSession();
+        UserDataDTO udd = (UserDataDTO) hs.getAttribute("result");
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet"href="styleSheet1.css">
+        <link rel="stylesheet" href="styleSheet1.css" type="text/css">
         <title>JUMSユーザー情報詳細画面</title>
     </head>
     <body>
@@ -43,6 +43,8 @@
         <div style="text-align: center">
             <%=jh.home()%>
         </div>
-            <%}else{response.sendRedirect("index.jsp");}%>        
+        <%} else {
+                    response.sendRedirect("index.jsp");
+                }%>        
     </body>
 </html>
